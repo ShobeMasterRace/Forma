@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dobro Došli!</h1>
+    <b>Unesi novog korisnika</b>
+    <form action="/api/products" method="post">
+        Ime:<input name="Ime" type="text" />
+        Prezime:<input name="Prezime" type="text" />
+        <br />
+        E-mail:<input name="E-mail" type="email" />
+        <br />
+        Ulica:<input name="Ulica" type="text" />
+        <br />
+        Grad:<input name="Grad" type="text" />
+        <br />
+        Poštanski broj:<input name="PoštanskiBroj" type="text" />
+        <br />
+        Broj ukućana:<input name="BrojUkućana" type="text" />
+        <br />
+        Upit:<input name="Upit" type="text" />
+        <br />
+        <input name="submit" type="submit" />
+    </form>
+    <br />
+    <b>Za pronalazak korisnika upiši ID</b>
+    <form action="/api/products" method="get">
+        ID:<input name="ID" type="number" />
+        <input name="submit" type="submit" />
+    </form>
+</div>
