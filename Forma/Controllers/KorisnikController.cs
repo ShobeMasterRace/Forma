@@ -9,32 +9,41 @@ namespace Forma.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class KorisnikController : ControllerBase
+    public class KorisnikController : ControllerBase 
     {
+        private Data.Model.IdModel IdM;
+
         public KorisnikController()
         {
-
-            
-
-
+            IdM = new Data.Model.IdModel();
 
         }
 
-        //[Route("{id}")]
-        //[HttpGet]
-        //public IActionResult GetProduct(int id)
-        //{
-        //    var product = korisnici.FirstOrDefault((p) => p.Id == id);
+        public static List<Data.Model.KorisnikModel> korisnici = new List<Data.Model.KorisnikModel>
+        {
+            
+        };
 
-        //    if (product == null)
-        //    {
+        public IEnumerable<Data.Model.KorisnikModel> GetAllProducts()
+        {
+            return korisnici;
+        }
 
-        //        return StatusCode(404, "Upit nije pronađen!");
+        [Route("{id}")]
+        [HttpGet]
+        public IActionResult GetProduct(int id)
+        {
+            var product = korisnici.FirstOrDefault((p) => p.I == id);
 
-        //    }
+            if (product == null)
+            {
 
-        //    return Ok(product);
-        //}
+                return StatusCode(404, "Upit nije pronađen!");
+
+            }
+
+            return Ok(product);
+        }
 
 
 

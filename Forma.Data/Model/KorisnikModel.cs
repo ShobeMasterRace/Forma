@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Forma.Models
+namespace Forma.Data.Model
 {
     public class KorisnikModel
     {
-        [Key]
-        public int ID { get; set; }
-
+        
         [Required]
         public string Ime { get; set; }
 
-        [Required]       
+        [Required]
         public string Prezime { get; set; }
 
         public string Ulica { get; set; }
@@ -24,7 +21,6 @@ namespace Forma.Models
 
         [Required]
         public string Upit { get; set; }
-
 
     }
 }

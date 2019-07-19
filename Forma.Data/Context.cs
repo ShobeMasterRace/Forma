@@ -23,7 +23,7 @@ namespace Forma.Data
 
         }
 
-        public DbSet<Forma.Models.KorisnikModel> Korisnici { get; set; }
+        public DbSet<Model.KorisnikModel> Korisnici { get; set; }
 
 
     }
