@@ -11,41 +11,57 @@ namespace Forma.Controllers
     [ApiController]
     public class KorisnikController : ControllerBase 
     {
-        private Data.Model.IdModel IdM;
+        private Service.Services.Repository<Data.Model.KorisnikModel> Proba = new Service.Services.Repository<Data.Model.KorisnikModel>();
+        
 
         public KorisnikController()
         {
-            IdM = new Data.Model.IdModel();
 
         }
 
-        public static List<Data.Model.KorisnikModel> korisnici = new List<Data.Model.KorisnikModel>
-        {
-            
-        };
 
-        public IEnumerable<Data.Model.KorisnikModel> GetAllProducts()
+
+        [HttpGet]
+        [Route("")]
+        public IActionResult GetAll()
         {
-            return korisnici;
+
+            return Ok(Proba.GetAll());
+
         }
 
         [Route("{id}")]
         [HttpGet]
-        public IActionResult GetProduct(int id)
+        public IActionResult GetID(int id)
         {
-            var product = korisnici.FirstOrDefault((p) => p.I == id);
-
-            if (product == null)
-            {
-
-                return StatusCode(404, "Upit nije pronađen!");
-
-            }
-
-            return Ok(product);
+           
+            return Ok(Proba.Get(id));
         }
 
+        [Route("{id}")]
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+     
+            Proba.Delete(id);
 
+            return Ok();
 
+        }
+
+        [HttpPut]
+        [Route("")]
+        public IActionResult Edit([FromBody] Data.Model.KorisnikModel item)
+        {
+
+            return Ok(Proba.Edit(item));
+        }
+
+        [HttpPost]
+        [Route("")]
+        public IActionResult Add([FromBody] Data.Model.KorisnikModel item)
+        { 
+            return Ok(Proba.Add(item));
+        }
     }
 }

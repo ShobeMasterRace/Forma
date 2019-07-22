@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Forma.Data.Model
 {
-    public class KorisnikModel
+    public class KorisnikModel : IdModel
     {
         
         [Required]
@@ -17,7 +17,7 @@ namespace Forma.Data.Model
         public string Ulica { get; set; }
         public string Grad { get; set; }
         public string PostanskiBroj { get; set; }
-        public string BrojUkucana { get; set; }
+        public int BrojUkucana { get; set; }
 
         [Required]
         public string Upit { get; set; }

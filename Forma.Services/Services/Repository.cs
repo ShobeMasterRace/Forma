@@ -7,8 +7,7 @@ using System.Text;
 namespace Forma.Service.Services
 {
  
-    public class Repository<T> where T : Forma.Data.Model.IdModel
-
+    public class Repository<T> where T : Data.Model.IdModel 
     {
             private Data.Context Contx;
 
