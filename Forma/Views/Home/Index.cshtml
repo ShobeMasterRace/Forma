@@ -2,35 +2,45 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Dobro Došli!</h1>
-    <b>Unesi novog korisnika</b>
-    <form action="#" id="postForma">
-        Id:<input name="Id" id="Id" type="text" />
-        Ime:<input name="Ime" id="Ime" type="text" />
-        Prezime:<input name="Prezime" id="Prezime" type="text" />
+    <div class="text-center">
+        <h1 class="display-4">Dobro Došli!</h1>
+        <b>Unesi novog korisnika</b>
+ 
+            Id:<input name="Id" id="Id" type="text" /><button type="button" id="dohvati">dohvati</button>
+        <br />
+            Ime:<input name="Ime" id="Ime" type="text" />
+            Prezime:<input name="Prezime" id="Prezime" type="text" />
+
+            <br />
+            Ulica:<input name="Ulica" id="Ulica" type="text" />
+            <br />
+            Grad:<input name="Grad" id="Grad" type="text" />
+            <br />
+            Poštanski broj:<input name="PostanskiBroj" id="PostanskiBroj" type="text" />
+            <br />
+            Broj ukućana:<input name="BrojUkućana" type="text" />
+            <br />
+            Upit:<input name="Upit" id="Upit" type="text" />
+            <br />
+          <button id="putmetoda" type="button">PUT</button>
+     
+        <br />
+        <b>Za pronalazak korisnika upiši ID</b>
+
+        ID:<input name="Id" id="Id4" type="number" />
+        <button type="button" id="getid">Get by id</button>
+        <div id="content" style="width:500px; height:500px;">
+            ydf
+        </div>
+
+        <button type="button" id="get">
+            GET
+
+        </button>
+
 
         <br />
-        Ulica:<input name="Ulica" id="Ulica" type="text" />
         <br />
-        Grad:<input name="Grad" id="Grad" type="text" />
-        <br />
-        Poštanski broj:<input name="PoštanskiBroj" type="text" />
-        <br />
-        Broj ukućana:<input name="BrojUkućana" type="text" />
-        <br />
-        Upit:<input name="Upit" id="Upit" type="text" />
-        <br />
-        <input name="submit" type="submit" />
-    </form>
-    <br />
-    <b>Za pronalazak korisnika upiši ID</b>
-    <form action="#" id="getid">
-        ID:<input name="Id" id="Id" type="number" />
-        <input name="submit" type="submit" />
-    </form>
-    <button type="button" id="get">
-     GET
-
-    </button>
-</div>
+        DELETE ID:<input name="Id" id="Id4delete" type="number" />
+        <button type="button" id="deleteid">del by id</button>
+    </div>

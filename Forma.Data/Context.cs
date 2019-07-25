@@ -25,6 +25,7 @@ namespace Forma.Data
 
         public DbSet<Model.KorisnikModel> Korisnici { get; set; }
         public DbSet<Model.PrijavaModel> Prijave { get; set; }
-
+        
+        public DbSet<Model.ProizvodModel> Proizvodi { get; set; }
     }
 }
