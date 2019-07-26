@@ -32,6 +32,30 @@ $("button#addmetoda").on("click", function (ev) {
 
 });
 
+$("button#postmetoda2").on("click", function (ev) {
+
+    var noviProizvod = {};
+    noviProizvod.Naziv = $("input#naziv").val();
+    noviProizvod.Cijena = $("input#cijena").val();
+    console.log(noviProizvod);
+
+    $.ajax({
+        url: '/api/Proizvod',
+        method: 'post',
+        data: JSON.stringify(noviProizvod),
+        headers: {
+            'Access-Control-Allow-Origin': true,
+            'Content-Type': 'application/json; charset=utf-8',
+        }
+    }).then(function (data) {
+        console.log(data);
+
+    });
+
+});
+///////////////////////////////
+
+//Get (dohvati)
 $("button#dohvati").on("click", function (ev) {
     GetById($("input#Id").val()).then(function (data) {
         $("input#Id").val(data.id);
@@ -44,6 +68,16 @@ $("button#dohvati").on("click", function (ev) {
         console.log(data);
     });
 });
+
+$("button#dohvati2").on("click", function (ev) {
+    GetById($("input#Id").val()).then(function (data) {
+        $("input#Id").val(data.id);
+        $("input#naziv").val(data.Naziv);
+        $("input#cijena").val(data.Cijena);        
+        console.log(data);
+    });
+});
+///////////////////////////////
 
 //EDIT (obavezan je ID)
 $("button#putmetoda").on("click", function (ev) {
@@ -72,6 +106,29 @@ $("button#putmetoda").on("click", function (ev) {
     });
 
     
+});
+
+$("button#putmetoda2").on("click", function (ev) {
+
+    var noviProizvod = {};
+    noviProizvod.ID = $("input#Id").val();
+    noviProizvod.Ime = $("input#Ime").val();
+    console.log(noviProizvod);
+
+    $.ajax({
+        url: '/api/Proizvod',
+        method: 'put',
+        data: JSON.stringify(noviKorisnik),
+        headers: {
+            'Access-Control-Allow-Origin': true,
+            'Content-Type': 'application/json; charset=utf-8',
+        }
+    }).then(function (data) {
+        console.log(data);
+
+    });
+
+
 });
 
 //Get (ID)
@@ -109,6 +166,21 @@ $("#deleteid").on("click", function (event) {
     });
 });
 
+$("#deleteid2").on("click", function (event) {
+
+    var Id = $("input#Id5delete").val();
+    $.ajax({
+        url: '/api/Proizvod/' + Id,
+        method: 'delete',
+        headers: {
+            'Access-Control-Allow-Origin': true
+        }
+    }).then(function (data) {
+
+    });
+});
+//////////////////////////
+
 //Get all
 $("button#get").on("click", function () {
 
@@ -128,3 +200,21 @@ $("button#get").on("click", function () {
 
 });
 
+$("button#get2").on("click", function () {
+
+    $.ajax({
+        url: "/api/Proizvod",
+        method: 'get',
+        headers: {
+            'Access-Control-Allow-Origin': true,
+            'Content-Type': 'application/json; charset=utf-8',
+        }
+    }).then(function (data) {
+        console.log(data);
+
+
+    });
+
+
+});
+/////////////////////
