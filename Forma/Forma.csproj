@@ -21,4 +21,11 @@
     <ProjectReference Include="..\Forma.Services\Forma.Service.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Update="wwwroot\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -19,7 +19,7 @@ namespace Forma.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; Database=Korisnici; Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; Database=TestKorisnici; Trusted_Connection=true");
 
         }
 

@@ -20,7 +20,7 @@ namespace Forma.Controllers
             return View();
         }
 
-        public IActionResult Proizvod()
+        public IActionResult Proizvodi()
         {
             return View();
         }
