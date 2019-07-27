@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Proizvodi";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Dobro Došli!</h1>
+    <br />
+
+    <b>Unesi novi proizvod</b>
+
+    Id:<input name="Id" id="Id" type="text" />
+    <br />
+    Naziv:<input name="Naziv" id="naziv" type="text" />
+    <br />
+    Cijena:<input name="Cijena" id="cijena" type="text" />
+    <br />
+    <button id="postmetoda2" type="button">Post</button>
+
+    <br />
+    <b>Edit proizvod po ID-u</b>
+
+    Id:<input name="Id" id="Id" type="text" /><button type="button" id="dohvati2">dohvati</button>
+    <br />
+    Naziv:<input name="Naziv" id="naziv" type="text" />
+    <br />
+    Cijena:<input name="Cijena" id="cijena" type="text" />
+    <br />
+    <button id="putmetoda2" type="button">Post</button>
+
+    <br />
+
+    <b>Za pronalazak određenog proizvoda</b>
+    ID:<input name="Id" id="Id5" type="number" />
+    <button type="button" id="getid">Dohvati</button>
+    <div id="content" style="width:500px; height:500px;">
+        ISPIS
+    </div>
+
+    <button type="button" id="get2">
+        GET
+
+    </button>
+
+
+    <br />
+    <br />
+    DELETE ID:<input name="Id" id="Id5delete" type="number" />
+    <button type="button" id="deleteid2">Izbriši</button>
+</div>
