@@ -23,9 +23,20 @@ namespace Forma.Data
 
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+
+            builder.Entity<Model.ProizvodiNadrudzbe>()
+                .HasKey(a => new { a.NarudzbaId, a.ProizvodId });
+        }
+
         public DbSet<Model.KorisnikModel> Korisnici { get; set; }
         public DbSet<Model.PrijavaModel> Prijave { get; set; }
         
         public DbSet<Model.ProizvodModel> Proizvodi { get; set; }
+
+        public DbSet<Model.Narudzbe> Narudzbe { get; set; }
+
+        public DbSet<Model.ProizvodiNadrudzbe> ProizvodiNadrudzbe { get; set; }
     }
 }

@@ -7,22 +7,23 @@ using System.Text;
 namespace Forma.Service.Services
 {
  
-    public class Repository<T> where T : Data.Model.IdModel 
+    public class Repository<T>
+        where T : Data.Model.IdModel, new()  // new() služi da se može T instancirati
     {
-            private Data.Context Contx;
+            protected Data.Context Contx;
 
             public Repository()
             {
 
                 Contx = new Data.Context();
 
-
+         //   T asd = new T();
 
             }
 
 
 
-            public List<T> GetAll()
+            public virtual List<T> GetAll()
             {
                 List<T> departments = Contx.Set<T>().ToList();
                 return departments;
@@ -30,7 +31,7 @@ namespace Forma.Service.Services
 
             }
 
-            public T Get(int id)
+            public virtual T Get(int id)
             {
                 T department = Contx.Set<T>().FirstOrDefault(a => a.ID == id);
                 return department;
@@ -38,7 +39,7 @@ namespace Forma.Service.Services
 
             }
 
-            public T Add(T item)
+            public virtual T Add(T item)
             {
             Contx.Set<T>().Add(item);
             Contx.SaveChanges();
@@ -47,7 +48,7 @@ namespace Forma.Service.Services
 
             }
 
-            public List<T> AddMultiple(List<T> departments)
+            public virtual List<T> AddMultiple(List<T> departments)
             {
                 for (int i = 0; i < departments.Count; i++)
                 {
@@ -61,14 +62,14 @@ namespace Forma.Service.Services
 
             }
 
-            public T Edit(T item)
+            public virtual T Edit(T item)
             {
                 Contx.Attach(item).State = EntityState.Modified;
                 Contx.SaveChanges();
                 return item;
             }
 
-            public void Delete(int id)
+            public virtual void Delete(int id)
             {
 
                 T item = Contx.Set<T>().FirstOrDefault(a => a.ID == id);
